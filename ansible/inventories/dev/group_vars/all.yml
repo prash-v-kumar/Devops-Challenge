@@ -1,0 +1,28 @@
+env: dev
+ansible_user: root
+ansible_port: 22
+
+# Use the SAME key that works with manual SSH
+ansible_ssh_private_key_file: /home/prash/.ssh/dev-ssh-key
+
+# SSH hardening / stability for IaC environments
+ansible_ssh_common_args: >
+  -o ProxyCommand="ssh -W %h:%p -i ~/.ssh/prod-ssh-key root@{{ bastion_ip }}"
+  -o IdentitiesOnly=yes
+  -o StrictHostKeyChecking=no
+
+ansible_python_interpreter: /usr/bin/python3
+
+timezone: UTC
+
+docker_users:
+  - ubuntu
+
+api_image: ghcr.io/prash-v-kumar/weather-api:dev-1.0.0
+api_port: 8080
+
+db_name: weather
+db_user: weather_user
+
+
+

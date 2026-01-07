@@ -1,0 +1,31 @@
+---
+- name: Login to GHCR
+  docker_login:
+    registry_url: ghcr.io
+    username: prash-v-kumar
+    password: "{{ github_token }}"
+
+- name: Pull API Docker image
+  docker_image:
+    name: ghcr.io/prash-v-kumar/weather-api
+    tag: "dev-1.0.0"
+    source: pull
+    force: yes
+  register: pull_result
+
+- name: Debug image pull
+  debug:
+    var: pull_result
+
+- name: Run API container
+  docker_container:
+    name: weather-api
+    image: ghcr.io/prash-v-kumar/weather-api:dev-1.0.0
+    state: started
+    restart_policy: unless-stopped
+    published_ports:
+      - "{{ api_port }}:8080"
+    env:
+      DB_NAME: "{{ db_name }}"
+      DB_USER: "{{ db_user }}"
+      DB_PASSWORD: "{{ db_password }}"

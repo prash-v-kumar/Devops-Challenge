@@ -1,0 +1,26 @@
+{
+  "api_servers": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string",
+        "string"
+      ]
+    ],
+    "value": [
+      "46.224.198.189",
+      "46.224.198.178"
+    ]
+  },
+  "bastion_server": {
+    "sensitive": false,
+    "type": "string",
+    "value": "91.99.31.80"
+  },
+  "db_server": {
+    "sensitive": false,
+    "type": "string",
+    "value": "46.224.200.62"
+  }
+}

@@ -1,0 +1,5 @@
+- hosts: api
+  vars_files: ../inventories/{{ env }}/group_vars/secret.yml
+  become: true
+  roles:
+    - api

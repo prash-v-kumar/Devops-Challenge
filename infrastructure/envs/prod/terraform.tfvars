@@ -1,0 +1,17 @@
+environment          = "prod"
+vpc_name             = "prod-network"
+vpc_ip_range         = "10.0.0.0/16"
+subnet_ip_range      = "10.0.2.0/24"
+network_type         = "cloud"
+network_zone         = "eu-central"
+ssh_public_key       = "~/.ssh/prod-ssh-key.pub"
+api_instance_count       = 2
+location             = "nbg1"
+server_type          = "cx23"
+api_server_type      = "cx23"
+db_server_type       = "cx23"
+osimage              = "ubuntu-22.04"
+allowed_admin_ips    = ["0.0.0.0/0"] # need to update this as per the internal /admin / vpn networks
+private_network_cidr = "10.0.2.0/24"
+enableIP4            = true
+enableIP6            = false
