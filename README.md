@@ -104,11 +104,11 @@ terraform init
 
 ### 5.3 Plan Terraform
 
-terraform plan
+terraform plan -var="hcloud_token=$HCLOUD_TOKEN"
 
 ### 5.4 Deploy Terraform
 
-terraform apply
+terraform apply -var="hcloud_token=$HCLOUD_TOKEN"
 
 Terraform creates:
 
@@ -254,7 +254,7 @@ example:
 
 #### 9.1.2    Apply:
 
-    terraform apply
+    terraform apply -var="hcloud_token=$HCLOUD_TOKEN"
 
     - New servers are automatically
     - Added to the load balancer
@@ -290,7 +290,7 @@ example:
     to avoid unncessary costs, we can teardown the enviornment by using
 
      cd infrastructure/envs/dev
-     terraform destroy
+     terraform destroy -var="hcloud_token=$HCLOUD_TOKEN"
 
 ## 14. Assumptions & Design decisions
     - Database is single node (need to consider HA in future)
@@ -311,4 +311,5 @@ example:
                     total   | **~19.37 euro
 
 Thank you for reviewing this submission.
+
 
