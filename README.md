@@ -18,6 +18,7 @@ The solution supports **two environments (dev & prod)**, high availability, secu
 ### 2.1 High-Level Architecture
  
     ![Highlevel Architecture Diagram](architecture.png)
+ <img width="500" height="585" alt="image" src="https://github.com/user-attachments/assets/314a7268-7375-48f8-a019-bde1954e1d0b" />
 
 ### 2.2 Design Decisions
 
@@ -310,3 +311,4 @@ example:
                     total   | **~19.37 euro
 
 Thank you for reviewing this submission.
+
