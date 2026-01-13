@@ -26,7 +26,9 @@ The solution supports **two environments (dev & prod)**, high availability, secu
 - **Stateless API containers** enable horizontal scaling
 
 - **Private networking** isolates internal communication
-    - ❗ **IMPORTANT:** the solution is created with public ip for api & database VM
+    - ❗ **IMPORTANT:** the solution is created with public ip for api & database VM, i have created another repository for create / deploy api & database in private network 
+    https://github.com/prash-v-kumar/devops-challenge-with-private-network
+    
 - **Bastion host** ensures secure SSH access
 - **Firewall rules** follow least-privilege principle
 - **Terraform** is the single source of truth
