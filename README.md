@@ -104,6 +104,7 @@ environment = "dev"
 ### 5.2 Initialize Terraform
 
 cd infrastructure/envs/dev
+
 terraform init
 
 ### 5.3 Plan Terraform
@@ -136,9 +137,13 @@ Terraform creates:
     useful commands 
 
     hcloud server list
+    
     hcloud server describe <server id>
+    
     hcloud loadbalancer list
+    
     hcloud loadbalancer describe <load balancer name / id>
+    
     hcloud firewall list
 
 
@@ -158,12 +163,16 @@ docker push ghcr.io/prash-v-kumar/weather-api:dev-1.0.0
 ## 7. Configuration Management (Ansible)
 ### 7.1 Generate Inventory from Terraform Outputs
 terraform output -json > outputs.json
+
 python scripts/generate-hosts.py --env dev
 
 ### 7.2 Run Ansible Playbooks from local machine
 cd ansible
+
 ansible-playbook -i inventories/dev/hosts.yml playbooks/site.yml --ask-vault-pass
+
 ansible-playbook -i inventories/dev/hosts.yml playbooks/api.yml --ask-vault-pass
+
 ansible-playbook -i inventories/dev/hosts.yml playbooks/db.yml --ask-vault-pass
 
 ### 7.3 Run Ansible Playbooks from pipeline
@@ -315,6 +324,7 @@ example:
                     total   | **~19.37 euro
 
 Thank you for reviewing this submission.
+
 
 
 
