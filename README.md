@@ -96,7 +96,9 @@ Create a `terraform.tfvars` file inside `infrastructure/envs/dev`:
 
 
 hcloud_token = "<HETZNER_API_TOKEN>"
+
 ssh_public_key_path = "~/.ssh/dev-ssh-key.pub"
+
 environment = "dev"
 
 ### 5.2 Initialize Terraform
@@ -313,5 +315,6 @@ example:
                     total   | **~19.37 euro
 
 Thank you for reviewing this submission.
+
 
 
